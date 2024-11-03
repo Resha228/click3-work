@@ -106,9 +106,9 @@ body {
   font-size: 20px;
   margin-bottom: 30px;
 }
-/* Основные стили для секции с карточками */ /* Основные стили для секции с карточками */
+/* Основные стили для секции с карточками */
 .detailed-services {
-  padding: 50px 0;
+  padding: 70px 0;
   background-color: #f3f3f3;
   text-align: center;
 }
@@ -116,63 +116,76 @@ body {
 .detailed-services .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
 }
 
 .service-card {
   background-color: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  max-width: 300px;
-  min-height: 200px; /* Фиксированная минимальная высота для предотвращения "прыжка" */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 350px;
+  min-height: 250px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  transition: transform 0.5s ease; /* Более плавный переход */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-content {
-  transition: opacity 0.6s ease; /* Плавный переход между текстами */
+  transition: opacity 0.6s ease;
+  text-align: center;
 }
 
 .service-card h3 {
-  font-size: 24px;
+  font-size: 26px;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .service-card .description {
-  font-size: 16px;
+  font-size: 18px;
   color: #666;
   opacity: 1;
-  transition: opacity 0.6s ease; /* Плавный переход */
+  transition: opacity 0.6s ease;
 }
 
 .service-card .benefits {
   opacity: 0;
-  display: block; /* Делаем элемент видимым, но с нулевой непрозрачностью */
-  list-style: disc;
-  padding-left: 20px;
+  list-style: none;
+  padding-left: 0;
   transition: opacity 0.6s ease;
 }
 
 .service-card .benefits li {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 25px;
 }
 
-/* Эффект наведения: плавная смена текста */
+.service-card .benefits li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-size: 18px;
+}
+
 .service-card:hover .description {
-  opacity: 0; /* Плавно скрываем описание */
+  opacity: 0;
 }
 
 .service-card:hover .benefits {
-  opacity: 1; /* Плавно показываем список преимуществ */
+  opacity: 1;
 }
